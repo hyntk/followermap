@@ -9,6 +9,22 @@
 <li><%=current_user.nickname%></li>
 <li><%=current_user.image%></li>
 <li><%=current_user.location%></li>
+
+
+
+<% @followers.each do |follower| %>
+#ユーザー名
+<a href="https://twitter.com/<%= follower.screen_name %>" target="_blank"><%= follower.name %></a>
+#アカウント名
+<p><%= follower.screen_name %></p>
+#場所
+<p><%= follower.location %></p>
+<hr>
+
+<% end %>
+
+
+
   
   <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
   <%else%>
