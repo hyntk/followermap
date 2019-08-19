@@ -2,9 +2,11 @@ class HomeController < ApplicationController
   before_action :twitter
 
   def index
-    @followers = twitter.followers('current_user.name')
-    @followers.save!
-    redirect_to map_path
+    @followers = twitter.followers
+    # (current_user.name)
+    binding.pry
+    # @followers.save!
+    # redirect_to map_path
   end
 
   private
