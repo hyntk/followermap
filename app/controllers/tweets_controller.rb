@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class TweetsController < ApplicationController
   before_action :twitter
 
   def index
@@ -9,21 +9,26 @@ class HomeController < ApplicationController
 
     # json = ActiveSupport::JSON.decode(followers)
     # json = JSON.parse(followers)
+      # @maps = []
     followers.each do |data|
-      p data[':name']
-      @home = Home.new(
-        name: data.name,
-        location: data.location
+      map = Map.new(
+        followername: data.name,
+        followerlocation: data.location
       )
-  
-      # 確認
-      if @tweet.save
-        p 'DB保存に成功'
-      else
-        p 'DB保存に失敗'
-      end
+      # @maps << map
+      map.save
     end
+    redirect_to maps_url
+    # @maps.save
   end
+
+    def new
+      @tessts = Tweet.new
+    end
+
+    def create
+      Tweet.create
+    end
 
   private
     def twitter
