@@ -2,8 +2,8 @@ class MapsController < ApplicationController
   before_action :set_map, only: [:destroy]
   def index
     # @maps = Map.all
+    @maps = current_user.maps
     @maps = Map.where.not(latitude: nil)
-    binding.pry
   end
 
   def new

@@ -2,33 +2,27 @@ class TweetsController < ApplicationController
   before_action :twitter
 
   def index
-    followers = twitter.followers
-    # (current_user.name)
-    # @followers.save!
-    # redirect_to map_path
+    if user_signed_in?
+      followers = twitter.followers(current_user.name)
+      # (current_user.name)
+      # @followers.save!
+      # redirect_to map_path
 
-    # json = ActiveSupport::JSON.decode(followers)
-    # json = JSON.parse(followers)
-      # @maps = []
-    followers.each do |data|
-      map = Map.new(
-        followername: data.name,
-        followerlocation: data.location
-      )
-      # @maps << map
-      map.save
-    end
-    redirect_to maps_url
-    # @maps.save
+      # json = ActiveSupport::JSON.decode(followers)
+      # json = JSON.parse(followers)
+        # @maps = []
+      followers.each do |data|
+        map = Map.new(
+          followername: data.name,
+          followerlocation: data.location
+        )
+        # @maps << map
+        map.user_id = current_user.id
+        map.save
+      end
+      redirect_to maps_url
+    end  
   end
-
-    def new
-      @tessts = Tweet.new
-    end
-
-    def create
-      Tweet.create
-    end
 
   private
     def twitter
