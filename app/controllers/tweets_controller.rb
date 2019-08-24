@@ -3,6 +3,9 @@ class TweetsController < ApplicationController
 
   def index
     if user_signed_in?
+      #もし同じユーザー名のデータがある場合、紐づくフォロワーデータを全削除
+      current_user.maps.delete_all if User.where(name: current_user.name).count >= 1
+
       followers = twitter.followers(current_user.name)
       # (current_user.name)
       # @followers.save!
@@ -11,6 +14,7 @@ class TweetsController < ApplicationController
       # json = ActiveSupport::JSON.decode(followers)
       # json = JSON.parse(followers)
         # @maps = []
+
       followers.each do |data|
         map = Map.new(
           followername: data.name,
