@@ -14,9 +14,11 @@
       <%if user_signed_in? %>
         <li><%=current_user.name%></li>
         <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to '管理画面', admin_users_path %></li>
       <%else%>
         <li><%= link_to "ログイン", new_user_session_path %></li>
       <%end%>
+      <li><%= link_to 'blog', blogs_path %></li>
     </ul>
 
     <p class="notice"><%= notice %></p>
