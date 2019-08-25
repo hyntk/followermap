@@ -12,14 +12,18 @@
     <td><%= blog.content %></td>
     <td><%= blog.user.email %></td>
 
-  <% if current_user.admin == true %>  
-    <td><%= link_to "ブログを編集する", edit_blog_path(blog.id) %></td>
-    <td><%= link_to 'ブログを削除する', blog_path(blog.id), method: :delete %></td>
+  <%if user_signed_in? %>
+    <% if current_user.admin == true %>  
+      <td><%= link_to "ブログを編集する", edit_blog_path(blog.id) %></td>
+      <td><%= link_to 'ブログを削除する', blog_path(blog.id), method: :delete %></td>
+    <% end %>
   <% end %>  
   </tr>
 <% end %>
 </table>
 
-<% if current_user.admin == true %>
-  <%= link_to '新しくブログを投稿する', new_blog_path %>
+<%if user_signed_in? %>
+  <% if current_user.admin == true %>
+    <%= link_to '新しくブログを投稿する', new_blog_path %>
+  <% end %>
 <% end %>
