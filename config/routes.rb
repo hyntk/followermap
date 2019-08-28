@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :maps
   resources :blogs
+  resources :users, only: [:show]
 
   # 管理画面のルーティング
   namespace :admin do
