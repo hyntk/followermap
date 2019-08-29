@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Followermap</title>
+    <title>followermap</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,7 @@
   </head>
 
   <body>
+  <header>
     <ul>
       <%if user_signed_in? %>
         <li><%=current_user.name%></li>
@@ -20,12 +21,18 @@
         <li><%= link_to "ログイン", new_user_session_path %></li>
       <%end%>
       <li><%= link_to 'blog', blogs_path %></li>
-
     </ul>
+  </header>  
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
     <%= yield %>
+
+  <footer>
+    <p>運営会社DIVE INTO CODE株式会社</p>
+    <p>© 2015-2016 Copyright DIVE INTO CODE Corp.</p>
+  </footer>
+
   </body>
 </html>

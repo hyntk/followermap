@@ -1,31 +1,5 @@
 <h1>Maps</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>followerlocation</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @maps.each do |map| %>
-      <tr>
-        <td><%= map.followerlocation %></td>
-        <td><%= map.latitude %></td>
-        <td><%= map.longitude %></td>
-        <td><%= link_to 'Show', map %></td>
-        <td><%= link_to 'Edit', edit_map_path(map) %></td>
-        <td><%= link_to 'Destroy', map, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
 <script async defer
  src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%=ENV['google_map_API_key']%>&callback=initMap">
 </script>
@@ -59,7 +33,7 @@
           ];
       //↓マップの初期設定値を記述
       var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 5, //初期のマップの倍率　１－１８までで指定　数字が大きくなるとズームアップ
+          zoom: 5, //初期のマップの倍率 １－１８までで指定 数字が大きくなるとズームアップ
           styles: styles,
           center: latlng //地図の中心の指定
       });
@@ -88,3 +62,26 @@
       //複数マーカー ここまで  
   }
 </script>
+
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <th>followerlocation</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @maps.each do |map| %>
+      <tr>
+        <td><%= map.followerlocation %></td>
+        <td><%= map.latitude %></td>
+        <td><%= map.longitude %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
