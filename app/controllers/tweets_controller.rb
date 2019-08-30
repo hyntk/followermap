@@ -7,7 +7,7 @@ class TweetsController < ApplicationController
       #もし同じユーザー名のデータがある場合、紐づくフォロワーデータを全削除
       current_user.maps.delete_all if User.where(name: current_user.name).count >= 1
 
-      followers = twitter.followers(current_user.name)
+      followers = twitter.followers(current_user.name).take(20)
       # (current_user.name)
       # @followers.save!
       # redirect_to map_path
