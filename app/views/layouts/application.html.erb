@@ -15,8 +15,12 @@
       <%if user_signed_in? %>
         <li><%=current_user.name%></li>
         <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-        <li><%= link_to '管理画面', admin_users_path %></li>
         <li><%= link_to 'マイページ', user_path(current_user.id) %></li>
+
+          <%if current_user.admin == true %>
+            <li><%= link_to '管理画面', admin_users_path %></li>
+          <%end%>
+
       <%else%>
         <li><%= link_to "ログイン", new_user_session_path %></li>
       <%end%>
