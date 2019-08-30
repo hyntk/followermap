@@ -55,7 +55,6 @@ RSpec.feature "ユーザー登録機能", type: :feature do
       it "マイページに画面遷移できるかのテスト" do
         click_link "Sign in with Twitter"
         click_link "マイページ"
-        save_and_open_page
         expect(page).to have_content 'ユーザー詳細画面'
       end
     end
