@@ -2,13 +2,10 @@ class MapsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_map, only: [:destroy]
   def index
-    # @maps = Map.all
-    @maps = current_user.maps
-    @maps = Map.where.not(latitude: nil)
+    @maps = current_user.maps.where.not(latitude: nil)
   end
 
   def new
-    # 追記する
     @map = Map.new
   end
 
