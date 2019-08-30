@@ -6,6 +6,9 @@ class Map < ApplicationRecord
 
   belongs_to :user
 
+  validates :followername, presence: true
+  validates :followerlocation, presence: true
+
   private
   def geocode
     uri = URI.escape("https://maps.googleapis.com/maps/api/geocode/json?address="+self.followerlocation.gsub(" ", "")+ "&key=" + ENV['google_map_API_key'])
