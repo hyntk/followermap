@@ -218,3 +218,6 @@ ja:
     management_screeen: 管理画面
     management_screen_name: 名前
     management_screen_authority: 権限
+    followerlocation: フォロワーの場所
+    Latitude: 緯度
+    Longitude: 経度
