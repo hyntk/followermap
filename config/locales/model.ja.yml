@@ -1,0 +1,21 @@
+ja:
+  activerecord:
+    models:
+      blog: ブログ
+      user: ユーザー
+      map: 地図
+    attributes:
+      blog:
+        title: タイトル
+        content: 内容
+      map:
+        followername: フォロワーの名前
+        followerlocation: フォロワーの場所
+      user:
+        title: タイトル
+        name: 名前
+        email: メールアドレス
+        current_password: 現在のパスワード
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        remember_me: ログインを記憶
