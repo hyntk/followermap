@@ -1,19 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Blog, type: :model do
-  # 各テストの前にblogを作成
-  # before do
-  #   @blog = Blog.create(
-  #     title: "SampleBlog01",
-  #     content: "SampleBlog01のcontent01",
-  #     user_id: "1"
-  #   )
-  #   @other_blog = Blog.create(
-  #     title: "SampleBlog02",
-  #     content: "SampleBask02のcontent02",
-  #     user_id: "1"
-  #   )
-  # end
 
   it "contentが空ならバリデーションが通らない" do
     blog = Blog.new(title: 'SampleBlog01' ,content: '')
