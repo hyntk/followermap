@@ -3,18 +3,19 @@ class Admin::UsersController < ApplicationController
     @users = User.all
   end
 
-  def new
-    @user = User.new
-  end
+  # 追加開発用
+  # def new
+  #   @user = User.new
+  # end
 
-  def create
-    @user = User.new(user_params)
-    if @user.save
-      redirect_to admin_users_path
-    else
-      render new_admin_user_path
-    end
-  end
+  # def create
+  #   @user = User.new(user_params)
+  #   if @user.save
+  #     redirect_to admin_users_path
+  #   else
+  #     render new_admin_user_path
+  #   end
+  # end
 
   def edit
     @user = User.find(params[:id])
