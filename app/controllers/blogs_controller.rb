@@ -16,7 +16,7 @@ class BlogsController < ApplicationController
     @user = @blog.user.name
     if @blog.save
       # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示します。
-      redirect_to blogs_path, notice: "ブログを作成しました！"
+      redirect_to blogs_path, notice: t('view.blog_created!')
     else
       # 入力フォームを再描画します。
       render :new
@@ -28,7 +28,7 @@ class BlogsController < ApplicationController
 
   def update
     if @blog.update(blog_params)
-      redirect_to blogs_path, notice: "ブログを編集しました！"
+      redirect_to blogs_path, notice: t('view.blog_edited!')
     else
       render :edit
     end
@@ -36,7 +36,7 @@ class BlogsController < ApplicationController
 
   def destroy
     @blog.destroy
-    redirect_to blogs_path, notice:"ブログを削除しました！"
+    redirect_to blogs_path, notice: t('view.blog_deleted!')
   end
 
   private

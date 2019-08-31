@@ -231,3 +231,7 @@ ja:
     login: ログイン
     user_name: ユーザー名
     about_dashboard: twitterアカウントのフォロワーの所在
+    need_for_twitter_account: このサイトを使うにはtwitterアカウントが必要です。
+    blog_created!: ブログを作成しました！
+    blog_edited!: ブログを編集しました！
+    blog_deleted!: ブログを削除しました！
