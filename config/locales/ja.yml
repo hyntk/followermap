@@ -224,6 +224,7 @@ ja:
     auther: 執筆者
     date_of_writing: 記載日
     admin: 管理者
+    normal_user: 一般ユーザー
     errors_count: 件のエラーがあります。
     my_page: マイページ
     logout: ログアウト

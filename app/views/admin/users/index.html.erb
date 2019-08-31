@@ -13,9 +13,9 @@
       
       <td>
         <%if user.admin == true %>
-          管理者
+          <% t('view.admin')%>
         <% else %>
-          一般ユーザー
+          <% t('view.normal_user')%>
         <%end%>
       </td>
       
