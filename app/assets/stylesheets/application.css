@@ -68,6 +68,7 @@ footer {
   font-size: 12px;
   position: absolute;
   bottom: 0;
+  height: 5em;
 }
 
 html {
@@ -77,4 +78,21 @@ html {
 
 body {
   text-align: center;
+  margin-bottom: 5em;
+}
+
+#wrapper {
+  border: 1px solid #aaaaaa; /* 境界線を実線で指定する */
+  background: #cccccc; /* 背景の色を指定する */
+  text-align: center; /* インライン要素のセンタリングを指定する */
+  width: 1000px; /* 要素の横幅を指定する */
+  margin: 0px auto; /* ブロックレベル要素のセンタリングを指定する */
+}
+
+#wrapper_admin {
+  border: 1px solid #aaaaaa; /* 境界線を実線で指定する */
+  background: #cccccc; /* 背景の色を指定する */
+  text-align: center; /* インライン要素のセンタリングを指定する */
+  width: 400px; /* 要素の横幅を指定する */
+  margin: 0px auto; /* ブロックレベル要素のセンタリングを指定する */
 }
