@@ -12,6 +12,6 @@ Rails.application.routes.draw do
 
   # 管理画面のルーティング
   namespace :admin do
-    resources :users
+    resources :users, except: [:new]
   end
 end
