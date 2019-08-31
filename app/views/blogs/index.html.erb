@@ -6,25 +6,27 @@
   <% end %>
 <% end %>
 
-<table>
-  <tr>
-    <th><%= t('view.title') %></th>
-    <th><%= t('view.content') %></th>
-    <th><%= t('view.auther') %></th>
-  </tr>
+<div id="wrapper">
+  <table>
+    <tr>
+      <th><%= t('view.title') %></th>
+      <th><%= t('view.content') %></th>
+      <th><%= t('view.auther') %></th>
+    </tr>
 
-<% @blogs.each do |blog| %>
-  <tr>
-    <td><%= blog.title %></td>
-    <td><%= blog.content %></td>
-    <td><%= blog.user.name %></td>
+  <% @blogs.each do |blog| %>
+    <tr>
+      <td><%= blog.title %></td>
+      <td><%= blog.content %></td>
+      <td><%= blog.user.name %></td>
 
-  <%if user_signed_in? %>
-    <% if current_user.admin == true %>  
-      <td><%= link_to t('view.edit'), edit_blog_path(blog.id) %></td>
-      <td><%= link_to t('view.delete'), blog_path(blog.id), method: :delete %></td>
-    <% end %>
-  <% end %>  
-  </tr>
-<% end %>
-</table>
+    <%if user_signed_in? %>
+      <% if current_user.admin == true %>  
+        <td><%= link_to t('view.edit'), edit_blog_path(blog.id) %></td>
+        <td><%= link_to t('view.delete'), blog_path(blog.id), method: :delete %></td>
+      <% end %>
+    <% end %>  
+    </tr>
+  <% end %>
+  </table>
+</div>

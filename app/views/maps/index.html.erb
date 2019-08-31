@@ -65,23 +65,25 @@
 
 <br>
 
-<table>
-  <thead>
-    <tr>
-      <th><%= t('view.followerlocation') %></th>
-      <th><%= t('view.Latitude') %></th>
-      <th><%= t('view.Longitude') %></th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @maps.each do |map| %>
+<div id="wrapper">
+  <table>
+    <thead>
       <tr>
-        <td><%= map.followerlocation %></td>
-        <td><%= map.latitude %></td>
-        <td><%= map.longitude %></td>
+        <th><%= t('view.followerlocation') %></th>
+        <th><%= t('view.Latitude') %></th>
+        <th><%= t('view.Longitude') %></th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @maps.each do |map| %>
+        <tr>
+          <td><%= map.followerlocation %></td>
+          <td><%= map.latitude %></td>
+          <td><%= map.longitude %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
