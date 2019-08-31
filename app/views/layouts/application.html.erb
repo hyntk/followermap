@@ -19,14 +19,14 @@
       <%if user_signed_in? %>
           <li><a><%=current_user.name%></a></li>
           <%if current_user.admin == true %>
-            <li><%= link_to '管理画面', admin_users_path %></li>
+            <li><%= link_to t('view.admin'), admin_users_path %></li>
           <%end%>
 
-        <li><%= link_to 'マイページ', user_path(current_user.id) %></li>
-        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to t('view.my_page'), user_path(current_user.id) %></li>
+        <li><%= link_to t('view.logout'), destroy_user_session_path, method: :delete %></li>
 
       <%else%>
-        <li><%= link_to "ログイン", new_user_session_path %></li>
+        <li><%= link_to t('view.login'), new_user_session_path %></li>
       <%end%>
     </ul>
   </header>  
