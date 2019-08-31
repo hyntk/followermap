@@ -16,8 +16,8 @@
   <%= f.label :name %>
   <%= f.text_field :name %>
 
-  <%= f.label :admin %>
+  <%= f.label t('view.admin') %>
   <%= f.check_box :admin, {} , "true", "false" %>
 
-  <%= f.submit "edit user" %>
+  <%= f.submit t('view.edit') %>
 <% end %>
